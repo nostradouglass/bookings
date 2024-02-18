@@ -1,0 +1,58 @@
+
+
+// func RenderTemplate(w http.ResponseWriter, tmpl string) {
+// 	parsedTemplate, _ := template.ParseFiles("./templates/"+tmpl, "./templates/base.layout.gohtml")
+// 	err := parsedTemplate.Execute(w, nil)
+// 	if err != nil {
+// 		fmt.Println("error parsing template: ", err)
+// 		return
+// 	}
+// }
+
+// var templateCache = make(map[string]*template.Template)
+
+// func RenderTemplate(w http.ResponseWriter, templateStr string) {
+// 	var tmpl *template.Template
+// 	var err error
+
+// 	// check to see if we alreay have the template in our cache
+// 	_, inMap := templateCache[templateStr]
+
+// 	if !inMap {
+// 		// need to create the template
+// 		log.Println("creating template and adding to cache")
+// 		err = createTemplateCache(templateStr)
+// 		if err != nil {
+// 			log.Println("error creating template cache", err)
+// 			return
+// 		}
+// 	} else {
+// 		// we have the template in the cache
+// 		log.Println("using template from cache")
+// 	}
+// 	tmpl = templateCache[templateStr]
+
+// 	err = tmpl.Execute(w, nil)
+// 	if err != nil {
+// 		log.Println("error creating template cache", err)
+// 		return
+// 	}
+// }
+
+// func createTemplateCache(templateStr string) error {
+// 	templatesArr := []string{
+// 		fmt.Sprintf(("./templates/%s"), templateStr),
+// 		"./templates/base.layout.gohtml",
+// 	}
+
+// 	// parse the template
+// 	tmpl, err := template.ParseFiles(templatesArr...)
+// 	if err != nil {
+// 		return err
+// 	}
+// 	// add template to the cache
+
+// 	templateCache[templateStr] = tmpl
+
+// 	return nil
+// }
